@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Track My Order – Fashonet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      width: 100%;
+      background: #00000;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header .logo {
+      margin-bottom: -40px;
+    }
+    header .logo img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    header nav {
+      margin-top: 0;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    header nav a {
+      margin: 0 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    p.subtext {
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+    }
+
+    form {
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .auth-links {
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+
+    .auth-links a {
+      color: #000;
+      text-decoration: underline;
+      margin: 0 3px;
+    }
+
+    .result, .error {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    .result {
+      background: #f9f9f9;
+      border: 1px solid #eaeaea;
+    }
+
+    .error {
+      background: #ffeeee;
+      border: 1px solid #f5c2c2;
+      color: #b00;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: #666;
+      padding-top: 40px;
+      margin-top: 60px;
+      background: #f0e4d4;
+    }
+
+    footer .columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 80px;
+      margin-bottom: 20px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer li {
+      margin: 5px 0;
+    }
+
+    footer a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    footer .contact {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <!-- now loads from public/TFN_LOGO.png -->
+    <img src="/TFN_LOGO.png" alt="TFN – The Fashion Net Logo">
+  </div>
+  <nav>
+    <a href="#">BRANDS</a>
+    <a href="#">FASHION</a>
+    <a href="#">LINGERIE</a>
+    <a href="#">BEAUTY</a>
+    <a href="#">KIDS</a>
+    <a href="#">PROMOTIONS</a>
+  </nav>
+</header>
+
+<main>
+  <h1>HOW TO TRACK YOUR PURCHASE</h1>
+  <p class="subtext">
+    Enter your order number to track your order. You can also log in to track your order directly from your account.
+  </p>
+
+  <form id="track-form">
+    <label for="orderNumber">Order Number</label>
+    <input type="text" id="orderNumber" placeholder="Enter Order Number" autocomplete="off" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" placeholder="Enter Email Address" autocomplete="off" required />
+
+    <button type="submit">Track Order</button>
+  </form>
+
+  <div class="auth-links">
+    Already have an Account?
+    <a href="#">Sign In</a> or <a href="#">Sign Up</a>
+  </div>
+
+  <div id="output"></div>
+</main>
+
+<footer>
+  <div class="columns">
+    <div>
+      <strong>Top Brands</strong>
+      <ul>
+        <li>La Senza</li>
+        <li>Isla & Evie</li>
+        <li>Ann Summers</li>
+        <li>Castore</li>
+        <li>Gant</li>
+        <li>Zippy</li>
+        <li>OVS</li>
+      </ul>
+    </div>
+    <div>
+      <strong>Top Categories</strong>
+      <ul>
+        <li>Bras</li>
+        <li>Panties</li>
+        <li>Sleepwear</li>
+        <li>Kids</li>
+        <li>Accessories</li>
+      </ul>
+    </div>
+    <div>
+      <strong>Shipping & Returns</strong>
+      <ul>
+        <li>Order Status</li>
+        <li>Shipping & Delivery</li>
+        <li>Returns & Refunds</li>
+        <li>FAQs</li>
+      </ul>
+    </div>
+    <div>
+      <strong>Legal</strong>
+      <ul>
+        <li>Terms & Conditions</li>
+        <li>Privacy & Cookies Policy</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="contact">
+    📞 +971506172781 &nbsp;&nbsp; 📧 customer.care@thefashionnet.com
+    <br><br>
+    Follow TFN: 🟣 Instagram • 🔵 Facebook
+  </div>
+</footer>
+
+<script>
+  // dynamically point at your Vercel backend when embedded on Shopify,
+  // otherwise talk to whichever origin served this page:
+  const API_BASE = window.location.host.includes('myshopify.com')
+    ? 'https://fashonet-order-tracking-ee4i74cze-mohammad-saleehs-projects.vercel.app'
+    : window.location.origin;
+
+  const form = document.getElementById('track-form');
+  const output = document.getElementById('output');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const orderNumber = document.getElementById('orderNumber').value.trim();
+    output.innerHTML = '';
+
+    if (!email || !orderNumber) {
+      output.innerHTML = '<div class="error">⚠️ Please fill out both fields.</div>';
+      return;
+    }
+
+    try {
+      const response = await fetch(`${API_BASE}/api/track-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, orderNumber })
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        output.innerHTML = `<div class="error">❌ ${data.error || 'Something went wrong.'}</div>`;
+        return;
+      }
+
+      output.innerHTML = `
+        <div class="result">
+          <strong>Order #${data.order_number}</strong><br>
+          Status: ${data.status}<br>
+          Estimated Delivery: ${new Date(data.estimated_delivery).toLocaleDateString()}<br><br>
+          <strong>Items:</strong>
+          <ul>
+            ${data.items.map(item => `<li>${item.title} × ${item.quantity}</li>`).join('')}
+          </ul><br>
+          <strong>Shipping Address:</strong><br>
+          ${data.shipping_address.name || ''}<br>
+          ${data.shipping_address.address1 || ''}, ${data.shipping_address.city || ''}<br>
+          ${data.shipping_address.country || ''}<br><br>
+          ${data.tracking_link ? `<a href="${data.tracking_link}" target="_blank">📦 Track Shipment</a>` : ''}
+        </div>
+      `;
+    } catch (err) {
+      console.error('❌ Frontend fetch error:', err);
+      output.innerHTML = '<div class="error">❌ Failed to connect to the server.</div>';
+    }
+  });
+</script>
+
+</body>
+</html>
+
