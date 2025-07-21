@@ -43,9 +43,16 @@ module.exports = async function handler(req, res) {
       return res.status(404).json({ error: 'No orders found for this email.' });
     }
 
-    const targetOrder = orders.find(o => o.name === `#${orderNumber}`);
+    // Normalize order.name by stripping leading '#' if present
+    const targetOrder = orders.find(order => {
+      const rawName = order.name.startsWith('#')
+        ? order.name.slice(1)
+        : order.name;
+      return rawName === orderNumber;
+    });
+
     if (!targetOrder) {
-      return res.status(404).json({ error: `Order #${orderNumber} not found.` });
+      return res.status(404).json({ error: `Order ${orderNumber} not found.` });
     }
 
     console.log(`✅ Found order: ${targetOrder.name}`);
